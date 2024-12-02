@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 // const logger = require('morgan'); // 修改变量名
 const morgan = require("morgan");
 const logger = require("./logger");
+const PORT = 3000;
 
 // 路由文件引用
 const indexRouter = require("./routes/index");
@@ -67,6 +68,14 @@ const _errorHandler = (err, req, res, next) => {
   });
 };
 app.use(_errorHandler);
+
+app.listen(PORT, (err) => {
+  if (err) {
+    console.error("Failed to start server:", err);
+  } else {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  }
+});
 
 module.exports = app;
 
