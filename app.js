@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 // const logger = require('morgan'); // 修改变量名
 const morgan = require("morgan");
 const logger = require("./logger");
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // 路由文件引用
 const indexRouter = require("./routes/index");
